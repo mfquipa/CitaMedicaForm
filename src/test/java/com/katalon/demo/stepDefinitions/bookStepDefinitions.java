@@ -1,5 +1,6 @@
 package com.katalon.demo.stepDefinitions;
 
+import com.katalon.demo.steps.ConfirmationStep;
 import com.katalon.demo.steps.LoginUserStep;
 import com.katalon.demo.steps.MakeAppointmentStep;
 import com.katalon.demo.steps.OpenSteps;
@@ -8,7 +9,7 @@ import net.thucydides.core.annotations.Steps;
 
 import java.io.IOException;
 
-public class bookStepDefitinios {
+public class bookStepDefinitions {
 
     @Steps
     OpenSteps openSteps;
@@ -18,6 +19,9 @@ public class bookStepDefitinios {
 
     @Steps
     MakeAppointmentStep makeAppointmentStep;
+
+    @Steps
+    ConfirmationStep confirmationStep;
 
     @Given("the user is on the katalon cure page and clicks on the make appointment button.")
     public void theUserIsOnTheKatalonCurePageAndClicksOnTheMakeAppointmentButton() throws IOException {
@@ -42,7 +46,7 @@ public class bookStepDefitinios {
 
     @Then("The user will see the appointment confirmation message with the summary of the form")
     public void theUserWillSeeTheAppointmentConfirmationMessageWithTheSummaryOfTheForm() {
-        throw new io.cucumber.java.PendingException();
+        confirmationStep.confirmationBook();
     }
 
 }
